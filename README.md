@@ -29,13 +29,7 @@ This project provides a Python script to automate the generation of personalized
    cd cold-email-automation
    ```
 
-3. Install dependencies (if any):
-
-   ```bash
-   # Add instructions for installing dependencies, if required
-   ```
-
-4. Run the script:
+3. Run the script:
 
    ```bash
    python generate_cold_email.py
