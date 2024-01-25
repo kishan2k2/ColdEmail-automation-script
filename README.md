@@ -1,4 +1,3 @@
-```markdown
 # Cold Email Automation Project
 
 ## Overview
