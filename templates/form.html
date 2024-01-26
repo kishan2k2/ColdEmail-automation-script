@@ -1,0 +1,55 @@
+<!-- templates/form.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- static\css\styles.css -->
+    <title>Cold Email Form</title>
+</head>
+<body>
+
+<h1>Cold Email Form</h1>
+
+<form action="{{ url_for('form') }}" method="post">
+    <label for="company_name">Company Name:</label>
+    <input type="text" id="company_name" name="company_name" required>
+
+    <br>
+
+    <label for="company_domain">Company Domain:</label>
+    <input type="text" id="company_domain" name="company_domain" required>
+
+    <br>
+
+    <label for="person_name">Person Name:</label>
+    <input type="text" id="person_name" name="person_name" required>
+
+    <br>
+
+    <label for="projects">Projects:</label>
+    <input type="text" id="projects" name="projects" required>
+
+    <br>
+
+    <label for="skills_requirements">Skills Requirements:</label>
+    <select id="skills_requirements" name="skills_requirements" multiple>
+        {% for skill in skills %}
+            <option value="{{ skill }}">{{ skill }}</option>
+        {% endfor %}
+    </select>
+
+    <br>
+
+    <label for="email">Email of reciever:</label>
+    <input type="email" id="email" name="email" required>
+
+    <br>
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
