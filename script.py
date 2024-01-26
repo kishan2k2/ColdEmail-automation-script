@@ -46,17 +46,18 @@ def generate_cold_email(company_name, company_domain, person_name, project=proje
     # Portfolio Link
     email_content += "\n\nTo view me in a more sophisticated way, please visit my portfolio: [Kishan's Portfolio](https://kishan2k2.github.io/Portfolio/)\n"
 
-    # Filter projects based on skills_requirements
+   # Filter projects based on skills_requirements
     matching_projects = []
     if skills_requirements:
         matching_projects = [project for project in projects if any(req in project["requirements"] for req in skills_requirements)]
 
     # Extract skills from matching projects
-    matching_skills = [skill for project in matching_projects for skill in project["requirements"]]
+    matching_skills = [skill for project in matching_projects for skill in project["requirements"] if skill in skills_requirements]
 
     # Deduplicate skills
     unique_skills_requirements = set(matching_skills)
-    # print(unique_skills_requirements)
+
+    print(unique_skills_requirements)
     # Adding a line about matching skill requirements
     if matching_projects:
         email_content += f"\n\nThese projects match these [{', '.join(unique_skills_requirements)}] skills required for the job:"
