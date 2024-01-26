@@ -50,7 +50,7 @@ unique_requirements = set()
 for project in projects:
     unique_requirements.update(project.get("requirements", []))
 
-# Displaying the unique requirements
+# # Displaying the unique requirements
 # print("Unique Requirements:")
 # for requirement in unique_requirements:
-# 
+#     print(requirement)

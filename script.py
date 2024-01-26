@@ -3,7 +3,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import configparser
-from project import projects
+from proj import projects
 config = configparser.ConfigParser()
 config.read('config.ini')
 
@@ -23,7 +23,7 @@ def send_email(subject, body, to_email, sender_email, sender_password):
         server.sendmail(sender_email, to_email, message.as_string())
 
 
-def generate_cold_email(company_name, company_domain, person_name, projects=projects, skills_requirements=None, email=None):
+def generate_cold_email(company_name, company_domain, person_name, project=projects, skills_requirements=None, email=None):
     # Greeting
     email_content = f"Dear {person_name},\n\n"
 
@@ -56,7 +56,7 @@ def generate_cold_email(company_name, company_domain, person_name, projects=proj
 
     # Deduplicate skills
     unique_skills_requirements = set(matching_skills)
-
+    # print(unique_skills_requirements)
     # Adding a line about matching skill requirements
     if matching_projects:
         email_content += f"\n\nThese projects match these [{', '.join(unique_skills_requirements)}] skills required for the job:"
@@ -87,9 +87,6 @@ def generate_cold_email(company_name, company_domain, person_name, projects=proj
     return email_content
 
 
-
-
-
 # Example usage:
 company_name = "Your company"
 company_domain = "Your companys' Domain"
@@ -98,5 +95,5 @@ skills_requirements = ["react", "research", "game development"]
 email = "payadikishan@gmail.com"
 
 cold_email = generate_cold_email(company_name, company_domain, person_name, projects, skills_requirements, email)
-print(cold_email)
+# print(cold_email)
 

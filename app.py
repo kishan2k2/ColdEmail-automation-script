@@ -1,15 +1,27 @@
-from flask import Flask, render_template
-from project import unique_requirements
+from flask import Flask, render_template, request
+from proj import unique_requirements
+from script import generate_cold_email
 app = Flask(__name__)
 
 
 @app.route('/')
 def index():
-    return render_template('form.html', skills = unique_requirements)
-
+    render_template('index.html')
 @app.route('/form', methods = ['GET', 'POST'])
 def form():
-    return render_template('form.html')
+    if request.method == 'POST':
+        company_name = request.form.get('company_name')
+        company_domain = request.form.get('company_domain')
+        person_name = request.form.get('person_name')
+        projects = request.form.get('projects')  # Assuming projects is a textarea or similar
+        skills_requirements = request.form.getlist('skills_requirements')
+        # print(skills_requirements)
+        email = request.form.get('email')
+        email_content = generate_cold_email(company_name, company_domain, person_name, projects, skills_requirements, email)
+        # flash('Email sent successfully!', 'success')
+        return render_template('form.html', skills = unique_requirements)
+    return render_template('form.html', skills = unique_requirements)
+
 
 @app.route('/response')
 def response():
