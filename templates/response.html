@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Response</title>
+    <!-- You can link your CSS styles here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Email Response</h1>
+        <!-- Update the message section in response.html -->
+        <div class="message">
+            <p class="formatted-message">{{ message }}</p>
+        </div>
+        <div class="copy-button">
+            <!-- You can use JavaScript to copy the text to the clipboard -->
+            <button onclick="copyToClipboard()">Copy Text</button>
+        </div>
+        <!-- Add this line at the end of response.html -->
+        <div class="back-to-form">
+            <a href="{{ url_for('form') }}">Send Another Response</a>
+        </div>
+
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            /* Logic to copy the text to the clipboard using JavaScript */
+            var messageElement = document.querySelector('.message p');
+            var textToCopy = messageElement.innerText;
+
+            var textarea = document.createElement('textarea');
+            textarea.value = textToCopy;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            alert('Text copied to clipboard!');
+        }
+    </script>
+</body>
+</html>

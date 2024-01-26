@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    render_template('index.html')
+    return render_template('index.html')
 @app.route('/form', methods = ['GET', 'POST'])
 def form():
     if request.method == 'POST':
@@ -19,7 +19,7 @@ def form():
         email = request.form.get('email')
         email_content = generate_cold_email(company_name, company_domain, person_name, projects, skills_requirements, email)
         # flash('Email sent successfully!', 'success')
-        return render_template('form.html', skills = unique_requirements)
+        return render_template('response.html', message=email_content)
     return render_template('form.html', skills = unique_requirements)
 
 

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <!-- You can link your CSS styles here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Project Details</h1>
+        <p>This website can be used to automate the message to recruiters
+            Job seekers can use this website, make sure to customise this project for you.
+            Follow the instructions given in the blogPost
+        </p>
+        <!-- GitHub Link Button -->
+        <a href="https://github.com/kishan2k2/ColdEmail-automation-script" target="_blank" class="round-button">GitHub</a>
+
+        <!-- YouTube Link Button -->
+        <a href="/" target="_blank" class="round-button">YouTube</a>
+
+        <!-- Blog Link Button -->
+        <a href="/" target="_blank" class="round-button">Blog</a>
+
+        <!-- Send Response Button -->
+        <a href="{{ url_for('form') }}" class="round-button">Try it</a>
+    </div>
+</body>
+</html>
