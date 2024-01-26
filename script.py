@@ -1,7 +1,9 @@
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-
+import configparser
+config = configparser.ConfigParser()
+config.read('config.ini')
 
 def send_email(subject, body, to_email, sender_email, sender_password):
     # Set up MIME
@@ -72,8 +74,9 @@ def generate_cold_email(company_name, company_domain, person_name, projects, ski
     
     if email:
         subject = f"Regarding internship oppurtunity at {company_name}"
-        sender_email = "Your-Email"
-        sender_password = "your 16 letter password that works without 2fa"
+        sender_email = "payadikishan@gmail.com"
+        sender_password = config.get('Credentials', 'sender_password')
+        # print(sender_email, sender_password)
         send_email(subject, email_content, email, sender_email, sender_password)
 
     return email_content
@@ -135,7 +138,7 @@ company_name = "Your company"
 company_domain = "Your companys' Domain"
 person_name = "You"
 skills_requirements = ["react", "research", "game development"]
-email = None
+email = "payadikishan@gmail.com"
 
 cold_email = generate_cold_email(company_name, company_domain, person_name, projects, skills_requirements, email)
 print(cold_email)
