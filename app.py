@@ -11,13 +11,13 @@ def index():
 def form():
     if request.method == 'POST':
         company_name = request.form.get('company_name')
-        company_domain = request.form.get('company_domain')
+        # company_domain = request.form.get('company_domain')
         person_name = request.form.get('person_name')
-        projects = request.form.get('projects')  # Assuming projects is a textarea or similar
+        # projects = request.form.get('projects')  # Assuming projects is a textarea or similar
         skills_requirements = request.form.getlist('skills_requirements')
         # print(skills_requirements)
         email = request.form.get('email')
-        email_content = generate_cold_email(company_name, company_domain, person_name, projects, skills_requirements, email)
+        email_content = generate_cold_email(company_name, None, person_name, None, skills_requirements, email)
         # flash('Email sent successfully!', 'success')
         return render_template('response.html', message=email_content)
     return render_template('form.html', skills = unique_requirements)

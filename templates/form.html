@@ -1,13 +1,31 @@
-<!-- templates/form.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
     <!-- static\css\styles.css -->
     <title>Cold Email Form</title>
+
+    <script>
+        // JavaScript function to filter dropdown options
+        function filterSkills() {
+            var input, filter, select, options, option, i;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            select = document.getElementById("skills_requirements");
+            options = select.getElementsByTagName("option");
+
+            for (i = 0; i < options.length; i++) {
+                option = options[i];
+                if (option.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    option.style.display = "";
+                } else {
+                    option.style.display = "none";
+                }
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -19,22 +37,13 @@
 
     <br>
 
-    <label for="company_domain">Company Domain:</label>
-    <input type="text" id="company_domain" name="company_domain" required>
-
-    <br>
-
     <label for="person_name">Person Name:</label>
     <input type="text" id="person_name" name="person_name" required>
 
     <br>
 
-    <label for="projects">Projects:</label>
-    <input type="text" id="projects" name="projects" required>
-
-    <br>
-
-    <label for="skills_requirements">Skills Requirements:</label>
+    <label for="skills_requirements">Skills Requirements: cntrl + click</label>
+    <input type="text" id="searchInput" onkeyup="filterSkills()" placeholder="Search for skills...">
     <select id="skills_requirements" name="skills_requirements" multiple>
         {% for skill in skills %}
             <option value="{{ skill }}">{{ skill }}</option>
