@@ -78,10 +78,10 @@ def generate_cold_email(company_name, company_domain, person_name, project=proje
     if email:
         subject = f"Regarding internship oppurtunity at {company_name}"
         sender_email = "payadikishan@gmail.com"
-        # sender_password = os.environ.get("password")
+        sender_password = os.environ.get("password")
         # print(sender_password)
         # sender_password = sender_password.strip('"')
-        sender_password = config.get('Credentials', 'sender_password')
+        # sender_password = config.get('Credentials', 'sender_password')
         # print(sender_email, sender_password)
         send_email(subject, email_content, email, sender_email, sender_password)
 
