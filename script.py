@@ -89,12 +89,12 @@ def generate_cold_email(company_name, company_domain, person_name, project=proje
 
 
 # Example usage:
-company_name = "Your company"
-company_domain = "Your companys' Domain"
-person_name = "You"
-skills_requirements = ["react", "research", "game development"]
-email = "payadikishan@gmail.com"
+# company_name = "Your company"
+# company_domain = "Your companys' Domain"
+# person_name = "You"
+# skills_requirements = ["react", "research", "game development"]
+# email = "payadikishan@gmail.com"
 
-cold_email = generate_cold_email(company_name, company_domain, person_name, projects, skills_requirements, email)
+# cold_email = generate_cold_email(company_name, company_domain, person_name, projects, skills_requirements, email)
 # print(cold_email)
 
