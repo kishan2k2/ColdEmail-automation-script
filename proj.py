@@ -42,8 +42,26 @@ projects = [
         "roles_responsibilities": "Dataset preparation and preprocess, Research about all the different ways to do text classification. Tuning the models. Implementing the algorithms. Hosting the website.",
         "skills_used": "Data preprocessing, Research, algorithms, DeepLerning, LLM, hosting, gradio",
         "result": "Created a movie recommendation system with astonishing accuracy.",
-        "requirements": ["data-preprocessing", "research", "algorithm", "deep-learning", "LLM"]
-    }
+        "requirements": ["data-preprocessing", "research", "algorithm", "deep-learning", "llm"]
+    },
+    {
+        "name": "Obscene Content Blocker",
+        "link": "https://github.com/kishan2k2/Obscene_ContentBlockert",
+        "description": "Design and develop a technological solution for identifying and blocking any obscene media (image/video/audio) at the user’s end. The solution should be able to send alerts to the concerned nodal agency in case of the spread of such content. The solution may be in the form of a desktop/mobile application or a web browser plugin.",
+        "roles_responsibilities": "Developed API endpoints, Developed entire pipeline from data retrieval to obscenity check.",
+        "skills_used": "Data collection, preprocessing, Bert model, Flask API, HTML, CSS, JS",
+        "result": "Created a browser extension that could detect obscenity in any website that you visit with 93.8% accuracy.",
+        "requirements": ['api', 'python', 'pipeline', 'datascraping', 'extension', 'html', 'css', 'js']
+    },
+    {
+        "name": "GovSevak - A government welfare scheme chatBot",
+        "link": "https://github.com/kishan2k2/NLP-Project",
+        "description": "Government schemes come and go, and the people who are supposed to be benefited never get to know about it. So we built a multi-lingual and multimodal chatbot that recommends government schemes based on your query.",
+        "roles_responsibilities": "Build the chatbot backend i.e. Vector database and DjangoAPI, Build the ML model.",
+        "skills_used": "RAG[Retrieval Augmented generation], LLM[Gemini Pro], VectorDatabase [FAISS]",
+        "result": "Created a very fast responding LLM application that recommends you government schemes based on your query.",
+        "requirements": ['api', 'streamlit', 'llm', 'vector-database', 'python', 'RAG']
+    },
 ]
 # Extracting unique requirements
 unique_requirements = set()
