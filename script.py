@@ -35,7 +35,7 @@ def generate_cold_email(company_name, company_domain, person_name, project=proje
     
 
     # Additional Information
-    email_content += "\n\nI also have a strong command over Data Structures and Algorithms, having solved 350+ questions on LeetCode and achieved 1576 rating on CodeChef, and top 30% in leetcode ratings."
+    email_content += "\n\nI also have a strong command over Data Structures and Algorithms, having solved 350+ questions on LeetCode and achieved 1600+ rating on CodeChef, and top 30% in leetcode ratings."
     
     # Resume
     email_content += "\n\nThis is my resume https://drive.google.com/file/d/1AQccmcrAY1Ku9eXHAMoO_-5tiN3BzWcc/view?usp=sharing"
